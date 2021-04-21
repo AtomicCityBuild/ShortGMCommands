@@ -12,23 +12,20 @@
 # Otherwise it wont work
 
 # --- Success Messages --- #
-# GM Survival Change (/g 0)
+# GM Survival Change (/gm 0)
 gmsurvival: "§aYour Gamemode has been changed to SURVIVAL!"
 
-# GM Creative Change (/g 1)
+# GM Creative Change (/gm 1)
 gmcreative: "§aYour Gamemode has been changed to CREATIVE!"
 
-# GM Adventure Change (/g 2)
+# GM Adventure Change (/gm 2)
 gmadventure: "§aYour Gamemode has been changed to ADVENTURE!"
 
-# GM Spectator Change (/g 3)
+# GM Spectator Change (/gm 3)
 gmspectator: "§aYour Gamemode has been changed to SPECTATOR!"
 
 
 # --- Error Messages --- #
-# If you dont provide a subcommand.
-nosubcommand: "§cPlease give out a number between 0 and 3!"
-
 # If someone does not have the permission pocketmine.command.gamemode
 nopermission: "§cYou dont have the permission to use this command"
 

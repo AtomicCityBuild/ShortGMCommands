@@ -1,7 +1,7 @@
 name: ShortGMCommands
 main: GermanLetsLPFor\Main
 description: Shorter Gamemode Commands
-version: 2.2.5
+version: 2.4.9
 api: 3.0.0
 commands:
   gm:
