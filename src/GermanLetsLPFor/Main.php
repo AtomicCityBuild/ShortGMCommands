@@ -88,56 +88,60 @@ class Main extends PluginBase implements Listener {
 		} 			
 	}elseif ($sender instanceof Player) {
 		$this->openSGMC($sender);
-	}
-		return true;
+	}else{
+		$sender->sendMessage($this->getConfig()->get("nosubcommand"));	
 		}
 	}
+	return true;
+}
+	
 	public function openSGMC($player){
 		$api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
 		$form = $api->createSimpleForm(function (Player $player, int $data = null) {
 			$result = $data;
-			if($result == null){
+			if($result === null){
+				$player->sendMessage($this->getConfig()->get("noformapi"));
 				return true;
 			}
 			switch($result){
 				case 0:
-				//Gamemode Survival Change button
+				//Close UI Button
+				$player->sendMessage($this->getConfig()->get("ui-closemessage"));
+				break;
+				
+				case 1:
+				//Gamemode Survival Button
 				$player->sendMessage($this->getConfig()->get("gmsurvival"));
 					$player->setGamemode(Player::SURVIVAL);
 				break;
 				
-				case 1:
-				//Gamemode Creative Change button
+				case 2:
+				//Gamemode Creative Button
 				$player->sendMessage($this->getConfig()->get("gmcreative"));
 					$player->setGamemode(Player::CREATIVE);
 				break;
 				
-				case 2:
-				//Gamemode Adventure Change button
+				case 3:
+				//Gamemode Adventure Button
 				$player->sendMessage($this->getConfig()->get("gmadventure"));
 					$player->setGamemode(Player::ADVENTURE);
 				break;
 				
-				case 3:
-				//Gamemode Spectator Change button
+				case 4:
+				//Gamemode Spectator Button
 				$player->sendMessage($this->getConfig()->get("gmspectator"));
 					$player->setGamemode(Player::SPECTATOR);
 				break;
-				
-				case 4:
-				//Close UI Button
-				$player->sendMessage("§cShortGMCommands UI closed!");
-				break;
 			}
 			});
-	$form->setTitle("§4ShortGMCommands §8- §5UI");
-	$form->setContent("§4Change your Gamemode here:");
-	$form->addButton("§5Gamemode Survival");
-	$form->addButton("§5Gamemode Creative");
-	$form->addButton("§5Gamemode Adventure");
-	$form->addButton("§5Gamemode Spectator");
-	$form->addButton("§4Close Menu");
+	$form->setTitle($this->getConfig()->get("ui-title"));
+	$form->setContent($this->getConfig()->get("ui-text"));
+	$form->addButton($this->getConfig()->get("ui-close"));
+	$form->addButton($this->getConfig()->get("ui-survival"));
+	$form->addButton($this->getConfig()->get("ui-creative"));
+	$form->addButton($this->getConfig()->get("ui-adventure"));
+	$form->addButton($this->getConfig()->get("ui-spectator"));
 	$form->sendToPlayer($player);
 	return $form;
-		}
 	}
+}

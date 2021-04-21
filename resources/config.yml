@@ -1,4 +1,5 @@
-# ShortGMCommands
+# --- ShortGMCommands ---
+# by GermanLetsLPFor
 #
 # Thank you for using ShortGMCommands!
 #
@@ -10,6 +11,15 @@
 #
 # Please use " " for the messages.
 # Otherwise it wont work
+#
+# Short information about the config file:
+# when a new release is out and there are config file changes,
+# you must delete the config file and restart the server!
+# otherwise the new config options wont appear and you will 
+# have problems with the messages in Game.
+#
+# (Too much text for just a config file of a small plugin
+# like this, lets start the config :D)
 
 # --- Success Messages --- #
 # GM Survival Change (/gm 0)
@@ -25,9 +35,44 @@ gmadventure: "§aYour Gamemode has been changed to ADVENTURE!"
 gmspectator: "§aYour Gamemode has been changed to SPECTATOR!"
 
 
+
 # --- Error Messages --- #
+# If the UI cant be opened (May not work)
+nosubcommand: "§cYou need to enter a subcommand!"
+
 # If someone does not have the permission pocketmine.command.gamemode
 nopermission: "§cYou dont have the permission to use this command"
 
 # If the sender isnt a player
 noplayer: "Please use this command Ingame!"
+
+
+
+# --- UI Options --- #
+# The message if no FormAPI is installed (may currently not work)
+noformapi: "§cThere is no FormAPI installed yet."
+
+# The message that appears if you close the UI with the close button (not with the x at the top right of the UI)
+# (idk if it works, sometimes it does work, sometimes it does not work. But it will close the ui anyways)
+ui-closemessage: "§cGamemode Change UI closed!"
+
+# The Title of the UI
+ui-title: "§4GM Change UI"
+
+# The UI Text above the buttons
+ui-text: "§7Choose your next Gamemode:"
+
+# The Close Button
+ui-close: "§4Close UI"
+
+# The Gamemode Survival Button
+ui-survival: "§5Change to Survival"
+
+# The Gamemode Creative Button
+ui-creative: "§5Change to Creative"
+
+# The Gamemode Adventure Button
+ui-adventure: "§5Change to Adventure"
+
+# The Gamemode Spectator Button
+ui-spectator: "§5Change to Spectator"
