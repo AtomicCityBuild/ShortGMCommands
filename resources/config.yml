@@ -1,0 +1,36 @@
+# ShortGMCommands
+#
+# Thank you for using ShortGMCommands!
+#
+# The permission to use this plugin is
+# just pocketmine.command.gamemode !
+# Players without this default Gamemode 
+# permission wont be able to use the
+# commands.
+#
+# Please use " " for the messages.
+# Otherwise it wont work
+
+# --- Success Messages --- #
+# GM Survival Change (/g 0)
+gmsurvival: "§aYour Gamemode has been changed to SURVIVAL!"
+
+# GM Creative Change (/g 1)
+gmcreative: "§aYour Gamemode has been changed to CREATIVE!"
+
+# GM Adventure Change (/g 2)
+gmadventure: "§aYour Gamemode has been changed to ADVENTURE!"
+
+# GM Spectator Change (/g 3)
+gmspectator: "§aYour Gamemode has been changed to SPECTATOR!"
+
+
+# --- Error Messages --- #
+# If you dont provide a subcommand.
+nosubcommand: "§cPlease give out a number between 0 and 3!"
+
+# If someone does not have the permission pocketmine.command.gamemode
+nopermission: "§cYou dont have the permission to use this command"
+
+# If the sender isnt a player
+noplayer: "Please use this command Ingame!"

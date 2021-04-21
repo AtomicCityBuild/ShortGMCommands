@@ -1,0 +1,8 @@
+name: ShortGMCommands
+main: GermanLetsLPFor\Main
+description: Shorter Gamemode Commands
+version: 2.2.5
+api: 3.0.0
+commands:
+  gm:
+    description: Change your Gamemode!
