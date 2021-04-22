@@ -21,6 +21,8 @@
 # (Too much text for just a config file of a small plugin
 # like this, lets start the config :D)
 
+prefix: "§l§4ShortGMCommands §r§8| §r"
+
 # --- Success Messages --- #
 # GM Survival Change (/gm 0)
 gmsurvival: "§aYour Gamemode has been changed to SURVIVAL!"

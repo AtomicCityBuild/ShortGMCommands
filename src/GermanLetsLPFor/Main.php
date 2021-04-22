@@ -32,66 +32,66 @@ class Main extends PluginBase implements Listener {
 			if($sender instanceof Player) {
 				switch(strtolower($args[0])){
 					case "1":
-					$sender->sendMessage($this->getConfig()->get("gmcreative"));
+					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmcreative"));
 					$sender->setGamemode(Player::CREATIVE);
 				break;
 					case "0":
-					$sender->sendMessage($this->getConfig()->get("gmsurvival"));
+					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmsurvival"));
 					$sender->setGamemode(Player::SURVIVAL);
 				break;
 					case "2":
-					$sender->sendMessage($this->getConfig()->get("gmadventure"));
+					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmadventure"));
 					$sender->setGamemode(Player::ADVENTURE);
 				break;
 					case "3":
-					$sender->sendMessage($this->getConfig()->get("gmspectator"));
+					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmspectator"));
 					$sender->setGamemode(Player::SPECTATOR);
 				break;
 					case "c":
-					$sender->sendMessage($this->getConfig()->get("gmcreative"));
+					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmcreative"));
 					$sender->setGamemode(Player::CREATIVE);
 				break;
 					case "s":
-					$sender->sendMessage($this->getConfig()->get("gmsurvival"));
+					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmsurvival"));
 					$sender->setGamemode(Player::SURVIVAL);
 				break;
 					case "a":
-					$sender->sendMessage($this->getConfig()->get("gmadventure"));
+					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmadventure"));
 					$sender->setGamemode(Player::ADVENTURE);
 				break;
 					case "sp":
-					$sender->sendMessage($this->getConfig()->get("gmspectator"));
+					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmspectator"));
 					$sender->setGamemode(Player::SPECTATOR);
 				break;
 					case "creative":
-					$sender->sendMessage($this->getConfig()->get("gmcreative"));
+					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmcreative"));
 					$sender->setGamemode(Player::CREATIVE);
 				break;
 					case "survival":
-					$sender->sendMessage($this->getConfig()->get("gmsurvival"));
+					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmsurvival"));
 					$sender->setGamemode(Player::SURVIVAL);
 				break;
 					case "adventure":
-					$sender->sendMessage($this->getConfig()->get("gmadventure"));
+					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmadventure"));
 					$sender->setGamemode(Player::ADVENTURE);
 				break;
 					case "spectator":
-					$sender->sendMessage($this->getConfig()->get("gmspectator"));
+					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmspectator"));
 					$sender->setGamemode(Player::SPECTATOR);
 				break;
 				}
 			}else {
-			$sender->sendMessage($this->getConfig()->get("noplayer"));
+			$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("noplayer"));
 			}
 		}else {
-		$sender->sendMessage($this->getConfig()->get("nopermission"));
+		$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("nopermission"));
 		} 			
 	}elseif ($sender instanceof Player) {	
 		$api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
 		if($api !== null) {
 			$this->openSGMC($sender);
 		} else {
-			$sender->sendMessage("§cNo FormAPI installed yet!");
+			$sender->sendMessage($this->getConfig()->get("prefix") . "§cNo FormAPI installed yet!");
 		}
 	}
 	return true;
@@ -108,30 +108,30 @@ class Main extends PluginBase implements Listener {
 			switch($result){
 				case 0:
 				//Close UI Button
-				$player->sendMessage($this->getConfig()->get("ui-closemessage"));
+				$player->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("ui-closemessage"));
 				break;
 				
 				case 1:
 				//Gamemode Survival Button
-				$player->sendMessage($this->getConfig()->get("gmsurvival"));
+				$player->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmsurvival"));
 					$player->setGamemode(Player::SURVIVAL);
 				break;
 				
 				case 2:
 				//Gamemode Creative Button
-				$player->sendMessage($this->getConfig()->get("gmcreative"));
+				$player->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmcreative"));
 					$player->setGamemode(Player::CREATIVE);
 				break;
 				
 				case 3:
 				//Gamemode Adventure Button
-				$player->sendMessage($this->getConfig()->get("gmadventure"));
+				$player->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmadventure"));
 					$player->setGamemode(Player::ADVENTURE);
 				break;
 				
 				case 4:
 				//Gamemode Spectator Button
-				$player->sendMessage($this->getConfig()->get("gmspectator"));
+				$player->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmspectator"));
 					$player->setGamemode(Player::SPECTATOR);
 				break;
 			}
