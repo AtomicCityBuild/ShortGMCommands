@@ -5,4 +5,5 @@ branches:
 projects:
   ShortGMCommands:
     path: ""
+    icon: "icon.png"
 ...
