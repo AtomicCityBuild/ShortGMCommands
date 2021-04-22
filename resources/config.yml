@@ -37,9 +37,6 @@ gmspectator: "§aYour Gamemode has been changed to SPECTATOR!"
 
 
 # --- Error Messages --- #
-# If the UI cant be opened (May not work)
-nosubcommand: "§cYou need to enter a subcommand!"
-
 # If someone does not have the permission pocketmine.command.gamemode
 nopermission: "§cYou dont have the permission to use this command"
 
@@ -49,9 +46,6 @@ noplayer: "Please use this command Ingame!"
 
 
 # --- UI Options --- #
-# The message if no FormAPI is installed (may currently not work)
-noformapi: "§cThere is no FormAPI installed yet."
-
 # The message that appears if you close the UI with the close button (not with the x at the top right of the UI)
 # (idk if it works, sometimes it does work, sometimes it does not work. But it will close the ui anyways)
 ui-closemessage: "§cGamemode Change UI closed!"

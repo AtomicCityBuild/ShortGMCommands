@@ -86,13 +86,16 @@ class Main extends PluginBase implements Listener {
 		}else {
 		$sender->sendMessage($this->getConfig()->get("nopermission"));
 		} 			
-	}elseif ($sender instanceof Player) {
-		$this->openSGMC($sender);
-	}else{
-		$sender->sendMessage($this->getConfig()->get("nosubcommand"));	
+	}elseif ($sender instanceof Player) {	
+		$api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
+		if($api !== null) {
+			$this->openSGMC($sender);
+		} else {
+			$sender->sendMessage("§cNo FormAPI installed yet!");
 		}
 	}
 	return true;
+	}
 }
 	
 	public function openSGMC($player){
@@ -100,7 +103,6 @@ class Main extends PluginBase implements Listener {
 		$form = $api->createSimpleForm(function (Player $player, int $data = null) {
 			$result = $data;
 			if($result === null){
-				$player->sendMessage($this->getConfig()->get("noformapi"));
 				return true;
 			}
 			switch($result){
@@ -143,5 +145,5 @@ class Main extends PluginBase implements Listener {
 	$form->addButton($this->getConfig()->get("ui-spectator"));
 	$form->sendToPlayer($player);
 	return $form;
+		}
 	}
-}
