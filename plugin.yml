@@ -2,8 +2,20 @@ name: ShortGMCommands
 main: GermanLetsLPFor\Main
 description: Shorter Gamemode Commands
 author: GermanLetsLPFor
-version: 2.6.0
+version: 2.7.9
 api: 3.0.0
 commands:
   gm:
     description: Change your Gamemode!
+  g:
+    description: Change your Gamemode!
+  gmode:
+    description: Change your Gamemode!
+  creative:
+    description: Change your Gamemode to Creative!
+  survival:
+    description: Change your Gamemode to Survival!
+  adventure:
+    description: Change your Gamemode to Adventure!
+  spectator:
+    description: Change your Gamemode to Spectator!

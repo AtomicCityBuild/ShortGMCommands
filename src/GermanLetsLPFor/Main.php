@@ -26,62 +26,96 @@ class Main extends PluginBase implements Listener {
 		
 	switch ($command->getName()){
 		
+		case "creative":
+			if($sender->hasPermission("pocketmine.command.gamemode")) {
+			if($sender instanceof Player) {
+				$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmcreative"));
+				$sender->setGamemode(Player::CREATIVE);
+				}else {
+					$sender->sendMessage($this->getConfig()->get("noplayer"));
+				}
+			}else {
+				$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("nopermission"));
+			}
+		return true;
+
+		case "survival":
+			if($sender->hasPermission("pocketmine.command.gamemode")) {
+			if($sender instanceof Player) {
+				$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmsurvival"));
+				$sender->setGamemode(Player::SURVIVAL);
+				}else {
+					$sender->sendMessage($this->getConfig()->get("noplayer"));
+				}
+			}else {
+				$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("nopermission"));
+			}
+		return true;
+
+		case "adventure":
+			if($sender->hasPermission("pocketmine.command.gamemode")) {
+			if($sender instanceof Player) {
+				$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmadventure"));
+				$sender->setGamemode(Player::ADVENTURE);
+				}else {
+					$sender->sendMessage($this->getConfig()->get("noplayer"));
+				}
+			}else {
+				$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("nopermission"));
+			}
+		return true;
+
+		case "spectator":
+			if($sender->hasPermission("pocketmine.command.gamemode")) {
+			if($sender instanceof Player) {
+				$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmspectator"));
+				$sender->setGamemode(Player::SPECTATOR);
+				}else {
+					$sender->sendMessage($this->getConfig()->get("noplayer"));
+				}
+			}else {
+				$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("nopermission"));
+			}
+		return true;
+		
 		case "gm":
+		case "g":
+		case "gmode":
 			if(isset($args[0])){
 			if($sender->hasPermission("pocketmine.command.gamemode")) {
 			if($sender instanceof Player) {
 				switch(strtolower($args[0])){
+					// Gamemode Creative Command
 					case "1":
-					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmcreative"));
-					$sender->setGamemode(Player::CREATIVE);
-				break;
-					case "0":
-					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmsurvival"));
-					$sender->setGamemode(Player::SURVIVAL);
-				break;
-					case "2":
-					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmadventure"));
-					$sender->setGamemode(Player::ADVENTURE);
-				break;
-					case "3":
-					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmspectator"));
-					$sender->setGamemode(Player::SPECTATOR);
-				break;
 					case "c":
-					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmcreative"));
-					$sender->setGamemode(Player::CREATIVE);
-				break;
-					case "s":
-					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmsurvival"));
-					$sender->setGamemode(Player::SURVIVAL);
-				break;
-					case "a":
-					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmadventure"));
-					$sender->setGamemode(Player::ADVENTURE);
-				break;
-					case "sp":
-					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmspectator"));
-					$sender->setGamemode(Player::SPECTATOR);
-				break;
 					case "creative":
-					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmcreative"));
-					$sender->setGamemode(Player::CREATIVE);
+						$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmcreative"));
+						$sender->setGamemode(Player::CREATIVE);
 				break;
+					// Gamemode Survival Command
+					case "0":
+					case "s":
 					case "survival":
-					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmsurvival"));
-					$sender->setGamemode(Player::SURVIVAL);
+						$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmsurvival"));
+						$sender->setGamemode(Player::SURVIVAL);
 				break;
+					// Gamemode Adventure Command
+					case "2":
+					case "a":
 					case "adventure":
-					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmadventure"));
-					$sender->setGamemode(Player::ADVENTURE);
+						$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmadventure"));
+						$sender->setGamemode(Player::ADVENTURE);
 				break;
+					// Gamemode Spectator Command
+					case "3":
+					case "sp":
 					case "spectator":
-					$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmspectator"));
-					$sender->setGamemode(Player::SPECTATOR);
+						$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("gmspectator"));
+						$sender->setGamemode(Player::SPECTATOR);
 				break;
 				}
 			}else {
-			$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("noplayer"));
+			$sender->sendMessage($this->getConfig()->get("noplayer"));
 			}
 		}else {
 		$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("nopermission"));
@@ -89,7 +123,11 @@ class Main extends PluginBase implements Listener {
 	}elseif ($sender instanceof Player) {	
 		$api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
 		if($api !== null) {
+			if($sender->hasPermission("pocketmine.command.gamemode")) {
 			$this->openSGMC($sender);
+		}else {
+			$sender->sendMessage($this->getConfig()->get("prefix") . $this->getConfig()->get("nopermission"));
+		}
 		} else {
 			$sender->sendMessage($this->getConfig()->get("prefix") . "§cNo FormAPI installed yet!");
 		}
