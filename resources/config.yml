@@ -38,7 +38,37 @@ gmspectator: "§aYour Gamemode has been changed to SPECTATOR!"
 
 
 
+# --- Other Player GM Change --- #
+# Set another Players Gamemode to Creative - Sendermessage
+changegm-creative-sender: "§aYou successfully changed to Gamemode of the player to CREATIVE!"
+
+# Set another Players Gamemode to Creative - Playermessage
+changegm-creative-player: "§aYour Gamemode was changed to CREATIVE!"
+
+# Set another Players Gamemode to Survival - Sendermessage
+changegm-survival-sender: "§aYou successfully changed to Gamemode of the player to SURVIVAL!"
+
+# Set another Players Gamemode to Survival - Playermessage
+changegm-survival-player: "§aYour Gamemode was changed to SURVIVAL!"
+
+# Set another Players Gamemode to Adventure - Sendermessage
+changegm-adventure-sender: "§aYou successfully changed to Gamemode of the player to ADVENTURE!"
+
+# Set another Players Gamemode to Adventure - Playermessage
+changegm-adventure-player: "§aYour Gamemode was changed to ADVENTURE!"
+
+# Set another Players Gamemode to Creative - Sendermessage
+changegm-spectator-sender: "§aYou successfully changed to Gamemode of the player to SPECTATOR!"
+
+# Set another Players Gamemode to Creative - Playermessage
+changegm-spectator-player: "§aYour Gamemode was changed to SPECTATOR!"
+
+
+
 # --- Error Messages --- #
+# No Player with that name was found
+noplayerfound: "§cThere is no player with that name on the server!"
+
 # If someone does not have the permission pocketmine.command.gamemode
 nopermission: "§cYou dont have the permission to use this command"
 

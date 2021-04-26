@@ -2,7 +2,7 @@ name: ShortGMCommands
 main: GermanLetsLPFor\Main
 description: Shorter Gamemode Commands
 author: GermanLetsLPFor
-version: 2.7.9
+version: 2.9.13
 api: 3.0.0
 commands:
   gm:
